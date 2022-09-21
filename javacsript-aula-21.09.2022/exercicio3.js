@@ -18,6 +18,45 @@
     B=C);
 
 */
+verificaTriangulo();
+
+function verificaTriangulo(){
+    const A =  Number(prompt(`Digite um valor do lado A:`))
+    const B =  Number(prompt(`Digite um valor do lado B:`))
+    const C =  Number(prompt(`Digite um valor do lado C:`))
+
+    if (A < B + C && B < A + C && C < A + B){
+        // aqui quando é triangulo
+        
+        
+        
+        if(A != B && B != C && A != C) {
+            alert("É um Triângulo escaleno")
+            return
+        }
+        
+        // 30, 30, 20
+        // V, V, V => F
+        if(A==B &&  B==C)  {
+            alert("É um Triângulo equilátero")
+            return
+        }
+
+        // 30, 30, 20
+        // V, V, F => V
+        if (A==B || A==C ||  B==C) {
+            alert("É um Triângulo isósceles")
+            return
+        }
+
+
+    }else {
+        alert("Não é um triangulo")
+    }
+}
+
+// 15 , 20 , 30 
+
 
 
 
