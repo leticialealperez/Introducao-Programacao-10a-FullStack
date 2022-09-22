@@ -1,0 +1,87 @@
+-- Front I - 3 semanas (OK)
+- HTML
+- CSS
+
+-- Introdução a Programação - 8 semanas
+
+- Lógica de Programação (portugol)
+     -- Variaveis e tipos de Dados
+     -- Operadores (aritmeticos, lógicos, relacionais e de atribuição)
+     -- Estruturas condicionais (IF ELSE, SWITCH) => DESVIO DE FLUXO
+     -- Estruturas de repetição (ENQUANTO, FAÇA ENQUANTO E O PARA)
+     -- Vetores (lista de dados) => lista de idades
+     -- Funções (procedimentos)
+
+- Javascript
+     -- Sintaxe e semântica do JS
+     -- Variaveis (let, const e var) e tipos de dados são dinâmicos
+     -- Operadores (aritmeticos, lógicos, relacionais e de atribuição)
+     -- Estruturas condicionais (IF ELSE, SWITCH CASE)
+     -- Estruturas de repetição (WHILE, DO WHILE E O FOR)
+     -- Funções
+        -- funções anônimas
+        -- arrow functions
+     -- Arrays == vetores
+       *For in
+       *For of
+       *ForEach
+       *Filter
+       *Map
+       *Reduce
+       *Some
+       *Every
+       *FindIndex
+       *Find
+     -- Objetos
+       -- o que é esse tal de objeto
+       -- como criar
+       -- como acessar os valores
+     -- DOM
+       -- o que é essa tal de DOM
+       -- manipular elementos da DOM
+         -- capturar elementos da DOM
+         -- criar elementos com o JS
+         -- modificar elementos com JS
+         -- modificar propriedades desses elementos
+         -- criar propriedades para os elementos
+        -- eventos da DOM
+          -- como criar eventos
+          -- como remover eventos
+          -- quais os tipos de eventos da DOM
+        -- Formulários html
+            -- tipos de inputs
+            -- Validações e regras de inputs
+            -- Captura de dados pelo JS
+
+     -- Armazenamento do Browser
+       - localStorage
+       - sessionStorage
+
+    Front II => 3 semanas
+     -- CSS avançado
+        -- Flexbox
+        -- Animations
+     -- Framework => Boostrap => class e ids atributos de tags
+     -- Lógica com JS no Bootstrap
+
+    Front III => 8 semanas
+        -- NodeJS => contextos de execução do JS
+        -- TypeScript => como inicializar um projeto Node em TS
+          -- tipagem estática
+          -- interfaces
+          -- type
+          -- inferencia de tipos dos elementos da DOM
+          -- inferencia de tipos de eventos da DOM
+        -- ReactJS => com TS
+           -- por que utilizar React
+           -- Principios do React
+           -- Primeiros componentes React
+           -- SPA
+           -- MATERIAL UI => Framework => componentes prontos para utilização
+           -- Estados e Ciclos de vida de componentes => REACT HOOKS
+           -- Padrões de Projeto => Configuração de regras => ESLint
+           -- Tailwind => como configurar e como utilizar no projeto
+        -- Redux => Gerenciamento de estatos globais => como configurar
+            -- Redux
+            -- Redux Toolkit
+              -- integrações com API's ou serviços externos
