@@ -1,4 +1,4 @@
--- Front I - 3 semanas (OK)
+-- Front I - 3 semanas
 - HTML
 - CSS
 
