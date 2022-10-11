@@ -70,38 +70,38 @@
             <span>Natureza do Cargo</span> <br>
             
             <div>
-                <input type="radio" name="natureza-cargo" id="gerencia" checked>
+                <input type="radio" name="natureza-cargo" id="gerencia" value="Gerência">
                 <label for="gerencia">Gerência</label>
                 
-                <input type="radio" name="natureza-cargo" id="financeiro">
+                <input type="radio" name="natureza-cargo" id="financeiro" value="Financeiro">
                 <label for="financeiro">Financeiro</label>
                 
-                <input type="radio" name="natureza-cargo" id="recepcao">
+                <input type="radio" name="natureza-cargo" id="recepcao" value="Recepção">
                 <label for="recepcao">Recepção</label>
                 
-                <input type="radio" name="natureza-cargo" id="administrativo">
+                <input type="radio" name="natureza-cargo" id="administrativo" value="Administrativo">
                 <label for="administrativo">Administrativo</label>
                 
-                <input type="radio" name="natureza-cargo" id="juridico">
+                <input type="radio" name="natureza-cargo" id="juridico" value="Juridico">
                 <label for="juridico">Juridico</label>
             </div>
 
             <span>Área de interesse</span> <br>
 
             <div>
-                <input type="checkbox" name="area-interesse" id="computacao" checked>
-                <label for="computacao">Computacao</label>
+                <input type="checkbox" name="area-interesse" id="computacao" value="Computação">
+                <label for="computacao">Computação</label>
                 
-                <input type="checkbox" name="area-interesse" id="biologia">
+                <input type="checkbox" name="area-interesse" id="biologia" value="Biologia">
                 <label for="biologia">Biologia</label>
                 
-                <input type="checkbox" name="area-interesse" id="meio-ambiente">
+                <input type="checkbox" name="area-interesse" id="meio-ambiente" value="Meio-Ambiente">
                 <label for="meio-ambiente">Meio-Ambiente</label>
                 
-                <input type="checkbox" name="area-interesse" id="engenharia">
+                <input type="checkbox" name="area-interesse" id="engenharia" value="Engenharia">
                 <label for="engenharia">Engenharia</label>
                 
-                <input type="checkbox" name="area-interesse" id="historia">
+                <input type="checkbox" name="area-interesse" id="historia" value="História">
                 <label for="historia">História</label>
             </div>
 
@@ -114,7 +114,9 @@
         <input type="submit" value="Enviar">
         <button type="reset">Limpar</button>
     </form>
-
+    <div id="root">
+        <!-- AQUI VAI SER CRIADO DINAMICAMENTE -->
+    </div>
     <script src="gravar.js"></script>
 </body>
 
