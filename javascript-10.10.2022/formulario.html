@@ -22,15 +22,17 @@
             <legend>Dados Pessoais</legend>
 
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome"> <br>
+            <input type="text" name="nome" id="nome" required > <br>
 
             <label for="endereco">Endereço: </label>
-            <input type="text" name="endereco" id="endereco"> <br>
+            <input type="text" name="endereco" id="endereco" required> <br>
 
             <label for="cidade">Cidade: </label>
-            <input type="text" name="cidade" id="cidade">
+            <input type="text" name="cidade" id="cidade" required> <br>
 
-            <select name="estado" id="estado">
+            <label for="estado">Estado: </label>
+            <select name="estado" id="estado" required>
+                <option value="" selected disabled>Selecione</option>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
                 <option value="AP">Amapá</option>
@@ -61,6 +63,56 @@
             </select>
 
         </fieldset>
+
+        <fieldset>
+            <legend>Dados Profissionais</legend>
+
+            <span>Natureza do Cargo</span> <br>
+            
+            <div>
+                <input type="radio" name="natureza-cargo" id="gerencia" checked>
+                <label for="gerencia">Gerência</label>
+                
+                <input type="radio" name="natureza-cargo" id="financeiro">
+                <label for="financeiro">Financeiro</label>
+                
+                <input type="radio" name="natureza-cargo" id="recepcao">
+                <label for="recepcao">Recepção</label>
+                
+                <input type="radio" name="natureza-cargo" id="administrativo">
+                <label for="administrativo">Administrativo</label>
+                
+                <input type="radio" name="natureza-cargo" id="juridico">
+                <label for="juridico">Juridico</label>
+            </div>
+
+            <span>Área de interesse</span> <br>
+
+            <div>
+                <input type="checkbox" name="area-interesse" id="computacao" checked>
+                <label for="computacao">Computacao</label>
+                
+                <input type="checkbox" name="area-interesse" id="biologia">
+                <label for="biologia">Biologia</label>
+                
+                <input type="checkbox" name="area-interesse" id="meio-ambiente">
+                <label for="meio-ambiente">Meio-Ambiente</label>
+                
+                <input type="checkbox" name="area-interesse" id="engenharia">
+                <label for="engenharia">Engenharia</label>
+                
+                <input type="checkbox" name="area-interesse" id="historia">
+                <label for="historia">História</label>
+            </div>
+
+            <label for="mini-curriculo">Mini Curriculo: </label>
+            <textarea name="mini-curriculo" id="mini-curriculo" cols="30" rows="5" minlength="10" maxlength="10"></textarea>
+
+        </fieldset>
+        <br>
+        <br>
+        <input type="submit" value="Enviar">
+        <button type="reset">Limpar</button>
     </form>
 
     <script src="gravar.js"></script>
