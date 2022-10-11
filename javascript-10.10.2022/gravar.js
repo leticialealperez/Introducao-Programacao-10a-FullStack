@@ -3,7 +3,14 @@ const nomeHTML = document.getElementById('nome')
 const enderecoHTML = document.getElementById('endereco')
 const cidadeHTML = document.getElementById('cidade')
 const estadoHTML = document.getElementById('estado')
-const usuarios = []
+/* const usuarios = JSON.parse(localStorage.getItem('dadosFormulario') ?? '[]') */
+let usuarios = []
+const dadosStorage = localStorage.getItem('dadosFormulario')
+
+if(dadosStorage !== null){
+    usuarios = JSON.parse(dadosStorage);
+}
+
 
 const miniCurriculoHTML = document.getElementById('mini-curriculo')
 
@@ -36,7 +43,17 @@ function salvarFormulario(){
         listaInteresses: interesses
     }
 
+    const existe = usuarios.some((dado) => {
+        return dado.nome === nomeHTML.value // &&
+    })
+
+    if(existe){
+        alert("Não vai rolar!")
+        return
+    }
+
     usuarios.push(dados)
+    localStorage.setItem('dadosFormulario', JSON.stringify(usuarios))
     console.log(usuarios)
     montarCard(usuarios);
 }
@@ -84,3 +101,60 @@ function montarCard(listaDados){
    })
 
 }
+
+
+// JSON - Javascript Object Notation
+
+// objeto => propriedade: valor
+
+/* const carros = [
+    {
+        cor: 'preto',
+        modelo: 'fusca'
+    },
+     {
+        cor: 'preto',
+        modelo: 'fusca'
+    },
+     {
+        cor: 'preto',
+        modelo: 'fusca'
+    }
+] */
+
+
+// TRANSFORMAR UM OBJETO (ou qualquer dado) EM JSON 
+/* let dadosStorage = JSON.stringify(carros); */
+
+// TRANSFORMAR UM DADO json DE NOVO EM OBJETO OU ARRAY
+/* JSON.parse(dadosStorage) */
+
+
+// LOCALSTORAGE - não expira ao fechar o navegador
+
+// SET - criar ou substitui uma informação (chave) no localStorage
+/* let dadosString = JSON.stringify(carros)
+localStorage.setItem('listaCarros', dadosString) */
+
+// GET - capturar (ou trazer) os dados que estão no localStorage
+// JSON.parse(localStorage.getItem('dadosFormulario') ?? '[]')
+
+// REMOVE - remove um dado do localStorage
+
+
+
+// CLEAR - limpa ou remove TODOS os dados armazenados no localstorage
+
+
+
+// SESSIONSTORAGE - expira ao fechar o navegador
+
+// SET - criar ou substitui uma informação (chave) no sessionStorage
+
+
+// GET - capturar (ou trazer) os dados que estão no sessionStorage
+
+// REMOVE - remove um dado do sessionStorage
+
+
+// CLEAR - limpa ou remove TODOS os dados armazenados no sessionStorage
