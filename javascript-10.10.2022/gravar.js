@@ -3,6 +3,7 @@ const nomeHTML = document.getElementById('nome')
 const enderecoHTML = document.getElementById('endereco')
 const cidadeHTML = document.getElementById('cidade')
 const estadoHTML = document.getElementById('estado')
+const botaoAtualizar = document.getElementById('botao-Atualizar')
 /* const usuarios = JSON.parse(localStorage.getItem('dadosFormulario') ?? '[]') */
 let usuarios = []
 const dadosStorage = localStorage.getItem('dadosFormulario')
@@ -19,6 +20,10 @@ formularioHTML.addEventListener('submit', (evento) => {
     evento.preventDefault()
     
     salvarFormulario()
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    montarCard(usuarios)
 })
 
 function salvarFormulario(){
@@ -54,6 +59,7 @@ function salvarFormulario(){
 
     usuarios.push(dados)
     localStorage.setItem('dadosFormulario', JSON.stringify(usuarios))
+    formularioHTML.reset();
     console.log(usuarios)
     montarCard(usuarios);
 }
@@ -77,7 +83,8 @@ function montarCard(listaDados){
    listaDados.forEach((dado) => {
 
     const divCard = document.createElement('div')
-    divCard.setAttribute('style', 'border: 2px solid black;')
+    divCard.setAttribute('style', 'border: 2px solid black; margin: 10px')
+    divCard.setAttribute('id', dado.nome)
 
     const tituloCard = document.createElement('h3')
     tituloCard.innerText = dado.nome
@@ -96,10 +103,77 @@ function montarCard(listaDados){
         divCard.appendChild(paragrafo)
     });
 
+    const botaoEditar = document.createElement('button')
+    botaoEditar.setAttribute('type', 'button')
+    botaoEditar.innerText = 'Editar'
+    botaoEditar.addEventListener('click', () => {
+        editarDados(dado)
+    })
+    
+
+    const botaoApagar = document.createElement('button')
+    botaoApagar.setAttribute('type', 'button')
+    botaoApagar.innerText = 'Apagar'
+    botaoApagar.addEventListener('click', () => {
+        apagarDado(dado)
+    })
+
+    divCard.appendChild(botaoEditar)
+    divCard.appendChild(botaoApagar)
+
     divRoot.appendChild(divCard)
 
    })
 
+}
+
+function editarDados(dado){
+    // colocar os dados no formulario novamente
+    nomeHTML.value = dado.nome
+    enderecoHTML.value = dado.endereco
+    cidadeHTML.value = dado.cidade
+    estadoHTML.value = dado.estado
+
+    // ocultar o ENVIAR e mostrar o ATUALIZAR
+    const botaoEnviar = document.getElementById('botao-Enviar')
+    botaoEnviar.setAttribute('style', 'display: none')
+
+    const botaoAtualizar = document.getElementById('botao-Atualizar')
+    botaoAtualizar.setAttribute('style', 'display: inline-block')
+    botaoAtualizar.addEventListener('click', () => {
+        const dadoAtualizado = {
+            nome: nomeHTML.value,
+            endereco: enderecoHTML.value,
+            cidade: cidadeHTML.value,
+            estado: estadoHTML.value,
+        }
+
+        console.log(dadoAtualizado)
+    })
+
+    const botaoLimpar = document.getElementById('botao-Limpar')
+    botaoLimpar.innerHTML = 'Cancelar'
+    botaoLimpar.addEventListener('click', () => {
+        formularioHTML.reset()
+        botaoEnviar.setAttribute('style', 'display: inline-block')
+        botaoAtualizar.setAttribute('style', 'display: none')
+    })
+
+
+}
+
+function apagarDado(dado){
+
+    if(confirm("Tem certeza que deseja excluir?")){
+        // remover da DOM
+        document.getElementById(`${dado.nome}`).remove()
+
+        // remover da lista de usuarios - LOCAL
+        usuarios = usuarios.filter((usuario) => usuario.nome !== dado.nome)
+
+        // atualizar o localstorage
+        localStorage.setItem('dadosFormulario', JSON.stringify(usuarios))
+    }
 }
 
 
